@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "confectus": "^1.8.1",
+    "express": "^5.2.1"
+  },
+  "scripts": {
+    "start": "node ./src/app.js",
+    "dev": "node --watch ./src/server.js"
+  },
+  "type": "module"
+}
