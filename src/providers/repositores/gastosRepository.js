@@ -15,19 +15,19 @@ export class GastosRepository {
     return gasto;
   }
 
+  findIndexById(id) {
+    const index = dbGastos.findIndex((g) => g.id === id);
+    return index !== -1 ? index : null;
+  }
+
   create(gasto) {
     dbGastos.push(gasto);
     return gasto;
   }
 
   update(gasto) {
-    const indexGasto = dbGastos.findIndex((g) => g.id === gasto.id);
-
-    if (!gasto) {
-      return null;
-    }
-
-    dbGastos[indexGasto] = gasto;
+    const i = findIndexById(gasto.id);
+    return dbGastos.splice(i, 1, gasto);
   }
 
   delete(id) {
